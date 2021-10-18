@@ -1,0 +1,28 @@
+<div class="text-center">
+  <h5>Search for?</h5>
+  <ul class="list-inline">
+    <li
+      class="list-inline-item"
+      *ngFor="let type of types; let i = index"
+      [ngClass]="{ active: i === currentIndex }"
+      (click)="detect(i)"
+    >
+      {{ type }}
+    </li>
+  </ul>
+</div>
+
+<app-search-bar (submitted)="getsearchTerm($event)"></app-search-bar>
+<ngb-pagination
+  class="d-flex justify-content-center mt-4"
+  *ngIf="data.length"
+  [collectionSize]="totalPages * 10"
+  [(page)]="page"
+  [maxSize]="5"
+  [rotate]="true"
+  [ellipses]="false"
+  [boundaryLinks]="true"
+  (pageChange)="getsearchTerm(searchTerm)"
+></ngb-pagination>
+
+<app-table [data]="data" class="mt-4"></app-table>

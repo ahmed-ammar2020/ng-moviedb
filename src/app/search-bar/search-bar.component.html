@@ -1,0 +1,8 @@
+<form action="" class="w-75 m-auto" (submit)="submitForm($event)">
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Search"
+    (input)="getSearchTerm($any($event.target).value)"
+  />
+</form>

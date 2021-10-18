@@ -1,0 +1,11 @@
+li {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  color: #000;
+}
+
+li.active {
+  background-color: cornflowerblue;
+  color: #fff;
+}
